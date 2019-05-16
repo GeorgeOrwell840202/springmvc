@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Product - Spring MVC Application</title>
+    <th:block th:include="layout/header"/>
+</head>
+<body>
+<div class="container">
+    <div th:if="${not #lists.isEmpty(products)}">
+        <h2>All Products</h2>
+        <table class="table table-striped">
+            <tr>
+                <td>Id</td>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Type</td>
+                <td>Category</td>
+                <td>Price</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+            <tr th:each="product : ${products}">
+                <td th:text="${product.id}">Id</td>
+                <td th:text="${product.name}">Name</td>
+                <td th:text="${product.description}">Description</td>
+                <td th:text="${product.type}">Type</td>
+                <td th:text="${product.category}">Category</td>
+                <td th:text="${product.price}">Price</td>
+                <td><a th:href="${'/product/edit/'+product.id}" class="btn btn-primary">Edit</a></td>
+                <td><a th:href="${'/product/delete/'+product.id}" class="btn btn-danger">Delete</a></td>
+            </tr>
+        </table>
+    </div>
+
+
+</div>
+</body>
+</html>

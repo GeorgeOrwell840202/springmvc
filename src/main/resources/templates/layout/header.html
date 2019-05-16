@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Thymeleaf</title>
+<!--        <link rel="stylesheet" href="../../css/style.css" />-->
+
+        <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" href="webjars/bootstrap/3.3.7-1/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link rel="stylesheet" type="text/css" media="screen" href="../../css/style.css"  />
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div th:fragment="header">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+                            <ul class="nav navbar-nav">
+
+                                <li><a th:href="@{/products}">Products</a></li>
+                                <li><a th:href="@{/product/add}">Create Product</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="jumbotron">
+                    <div class="row text-center">
+                        <div class="row">
+                            <h2>Spring MVC Application</h2>
+                        </div>
+                    </div>
+                    <div class="row text-center">
+                        <img src="../../images/logo.png" width="10%" />
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+</html>
